@@ -28,7 +28,7 @@ closeBox.addEventListener('click', e =>{
         const parent = element.parentNode;
         setTimeout(function(){
             parent.style.display = 'none';
-           }, 500);  
+           }, 200);  
     }
 })
 
@@ -61,7 +61,7 @@ alertBanner.innerHTML = `<div class="alert-banner">
          setTimeout(function(){
              
             alertBanner.style.display = "none";
-           }, 500);
+           }, 200);
         
      };   
  });
