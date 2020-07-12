@@ -66,8 +66,22 @@ alertBanner.innerHTML = `<div class="alert-banner">
      };   
  });
 
+//animation: alert-box
 
-    
+
+alertBanner.animate([
+    { transform: 'scale(1)', background: 'red', opacity: 1, offset: 0 },
+    { transform: 'scale(.5) rotate(270deg)', background: 'blue', opacity: .5, offset: .2 },
+    { transform: 'scale(1) rotate(0deg)', background: 'red', opacity: 1, offset: 1 },
+  ], {
+    duration: 2000, //milliseconds
+    easing: 'ease-in-out', //'linear', a bezier curve, etc.
+    delay: 10, //milliseconds
+    iterations: 2, //or a number
+    direction: 'alternate', //'normal', 'reverse', etc.
+    fill: 'forwards' //'backwards', 'both', 'none', 'auto'
+  });
+
 //--------------------------message send ----------------------
 // messaging widget 
 
