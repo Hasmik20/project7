@@ -242,10 +242,11 @@
         <section class="message">
             <h3>Message User</h3>
             <form class="widget-container">
-               
-                <input type="text" class="form-field" list="datalist" placeholder="Search for user" onkeyup="findName(this.value)" > 
+                <div id="message"></div> 
+                <input type="text" class="form-field" id="searchList" list="datalist" placeholder="Search for user" onkeyup="findName(this.value)" > 
                 <!-- On keyup calls the function everytime a key is released  -->
-                <datalist id="datalist"> </datalist>                
+                <datalist id="datalist"> </datalist>   
+                            
                 <textarea placeholder="Message for user " class="form-area" id="messageField"></textarea>
                 <button class="button-primary" id="send">Send</button>
             </form>

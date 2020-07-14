@@ -70,9 +70,9 @@ alertBanner.innerHTML = `<div class="alert-banner">
 
 
 alertBanner.animate([
-    { transform: 'scale(1)', background: 'red', opacity: 1, offset: 0 },
+    { transform: 'scale(1)', background: 'blue', opacity: 1, offset: 0 },
     { transform: 'scale(.5) rotate(270deg)', background: 'blue', opacity: .5, offset: .2 },
-    { transform: 'scale(1) rotate(0deg)', background: 'red', opacity: 1, offset: 1 },
+    { transform: 'scale(1) rotate(0deg)', background: 'blue', opacity: 1, offset: 1 },
   ], {
     duration: 2000, //milliseconds
     easing: 'ease-in-out', //'linear', a bezier curve, etc.
@@ -82,6 +82,8 @@ alertBanner.animate([
     fill: 'forwards' //'backwards', 'both', 'none', 'auto'
   });
 
+  
+
 //--------------------------message send ----------------------
 // messaging widget 
 
@@ -89,10 +91,18 @@ const user = document.querySelector(".form-field");
 const message = document.getElementById("messageField");
 const send = document.getElementById("send");
 
-send.addEventListener('click', () => {
+send.addEventListener('click', (e) => {
+   
     //ensure user and message fields are filled out
     if(user.value === "" && message.value === ""){
-        alert("Please fill out user and message fields before sending");
+        e.preventDefault();
+        //to add message not alert
+        let message = document.querySelector('#message');
+        message.classList.add('error')
+        message.innerHTML = "Please fill out user and message fields before sending!";
+        //to desappear in 3s
+        setTimeout(() => message.remove(), 2000)
+        // alert("Please fill out user and message fields before sending");
     }else if(user.value === ""){
         alert("Please fill out user before sending");
     }else if(message.value === ""){
@@ -131,7 +141,6 @@ for (let i = 0; i<names.length; i++) {
 } 
 
 
-
 //---------------------------------localstorage---------------
 //local setting widget 
 
@@ -164,12 +173,16 @@ let publicLocal = localStorage.getItem("public");
        localStorage.setItem("public", publicInput.checked);
        localStorage.setItem("timezone", timezone.value);
        alert('Your changes successfully saved!');
-       location.reload();
+        
+        location.reload();
     })
 
     cancel.addEventListener('click', () =>{
         event.preventDefault();
-        localStorage.clear();
-        alert('Your changes successfully removed!')
-        location.reload();
+        
+        // alert('Your changes successfully removed!')
+        if (window.confirm("Do you want to delete your savings?")) 
+            localStorage.clear();
+         
+            location.reload();
     })

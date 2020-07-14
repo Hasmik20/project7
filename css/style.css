@@ -339,6 +339,12 @@ main{
     background-color:rgb(91, 90, 133);
     box-shadow: -5px -5px 10px;
 }
+.error{
+    background-color: crimson;
+    color: white;
+    padding: 5px;
+    margin: 5px;
+}
 
 /* local setting widget */
 
