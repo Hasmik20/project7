@@ -101,7 +101,7 @@ send.addEventListener('click', (e) => {
         message.classList.add('error')
         message.innerHTML = "Please fill out user and message fields before sending!";
         //to desappear in 3s
-        setTimeout(() => message.remove(), 2000)
+        setTimeout(() => message.remove(), 3000)
         // alert("Please fill out user and message fields before sending");
     }else if(user.value === ""){
         alert("Please fill out user before sending");
