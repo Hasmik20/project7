@@ -117,28 +117,30 @@ send.addEventListener('click', (e) => {
 
 const names = ['Victoria Chambers', 'Dave Bird','Down Wood', 'Dan Oliver']
   
- 
-function findName(value) { 
+let searchList = document.querySelector('#searchList')
+
+  
+searchList.addEventListener('keyup', function(e){
   document.getElementById('datalist').innerHTML = ''; 
-   //setting datalist empty at the start of function 
-   //if we skip this step, same name will be repeated 
-     
+  //setting datalist empty at the start of function 
+  //if we skip this step, same name will be repeated 
+    
 
-   //input query length 
+  //input query length 
 for (let i = 0; i<names.length; i++) { 
-   if(((names[i].toLowerCase()).indexOf(value.toLowerCase()))>-1) 
-   { 
-       //comparing if input string is existing in names[i] string 
+  if(((names[i].toLowerCase()).indexOf(searchList.value.toLowerCase()))>-1) 
+  { 
+      //comparing if input string is existing in names[i] string 
 
-       let option = document.createElement("option"); 
-       let nameList = document.createTextNode(names[i]); 
-        option.appendChild(nameList); 
+      let option = document.createElement("option"); 
+      let nameList = document.createTextNode(names[i]); 
+       option.appendChild(nameList); 
 
-         document.getElementById("datalist").appendChild(option); 
-             //creating and appending new elements in data list 
-       } 
-   } 
-} 
+        document.getElementById("datalist").appendChild(option); 
+            //creating and appending new elements in data list 
+      } 
+  } 
+});
 
 
 //---------------------------------localstorage---------------
