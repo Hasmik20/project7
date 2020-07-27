@@ -205,7 +205,11 @@ main{
     justify-items: center;     
 }
 
-
+.fall{
+    transition: all .5s;
+    transform: translateY(8rem) rotateZ(20deg);
+    opacity: 0;
+}
 /* line grath chart */
 .mobile h3,
 .members h3,

@@ -31,11 +31,15 @@ let trafficData = {
     
 //remove active class
 
-let remove = () =>{
-    for(let i = 0; i < trafficNavLinks.length; i++){
-        trafficNavLinks[i].classList.remove('active');
-        }
-    };
+// let remove = () =>{
+//     for(let i = 0; i < trafficNavLinks.length; i++){
+//         trafficNavLinks[i].classList.remove('active');
+//         }
+//     };
+    // shorter version as above 
+    let remove = ()=>{
+        trafficNavLinks.forEach(link => link.classList.remove("active"));
+    }
 //update chart (use className in if statement)
 
 let updateChart = () =>{

@@ -27,7 +27,7 @@ closeBox.addEventListener('click', e =>{
         const element = e.target;
         const parent = element.parentNode;
         setTimeout(function(){
-            parent.style.display = 'none';
+            parent.remove()
            }, 200);  
     }
 })
@@ -59,8 +59,7 @@ alertBanner.innerHTML = `<div class="alert-banner">
      
     if(element.classList.contains("alert-banner-close")){
          setTimeout(function(){
-             
-            alertBanner.style.display = "none";
+             alertBanner.remove()
            }, 200);
         
      };   
